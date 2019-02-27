@@ -30,30 +30,25 @@ Plugin 'mechatroner/rainbow_csv'
 
 Plugin 'junegunn/fzf.vim'
 
-Plugin 'vim-scripts/indentpython.vim'
-
 Bundle 'wellle/tmux-complete.vim'
 
 Plugin 'jerri/vimux'
 
-"Plugin 'mkomitee/vim-gf-python'
-
-Plugin 'okcompute/vim-python-match'
-
 Plugin 'kshenoy/vim-signature'
-
-Plugin 'nvie/vim-flake8'
 
 "Plugin 'tmhedberg/SimpylFold'
 
 "Plugin 'klen/python-mode'
 
-Plugin 'powerline/powerline',  {'rtp': 'powerline/bindings/vim/'}
-
 Plugin 'christoomey/vim-tmux-navigator'
 
 
-Plugin 'sjl/gundo.vim'
+Plugin 'mbbill/undotree'
+
+Plugin 'tpope/vim-surround'
+
+Plugin 'luochen1990/rainbow'
+
 
 
 Plugin 'Valloric/YouCompleteMe'
@@ -314,8 +309,10 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h: match BadWhitespace /\s\+$/
 
 
-let g:gundo_prefer_python3 = 1
-nmap <leader>u :GundoToggle<cr>
+let g:rainbow_active = 1
+
+nmap <leader>u :UndotreeToggle<cr>
+
 
 " Use persistent history.
 if !isdirectory("/tmp/.vim-undo-dir")
